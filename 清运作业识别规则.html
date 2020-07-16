@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>清运作业识别规则</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/清运作业识别规则/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-3.2.1.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/recording.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="resources/scripts/axure/math.js"></script>
+    <script src="resources/scripts/axure/jquery.nicescroll.min.js"></script>
+    <script src="data/document.js"></script>
+    <script src="files/清运作业识别规则/data.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (矩形) -->
+      <div id="u57081" class="ax_default _二级标题">
+        <div id="u57081_div" class=""></div>
+        <div id="u57081_text" class="text ">
+          <p><span style="text-decoration:none;">清运作业识别规则</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u57082" class="ax_default label">
+        <div id="u57082_div" class=""></div>
+        <div id="u57082_text" class="text ">
+          <p><span style="text-decoration:none;">1、匹配时间：每日凌晨识别前一天的作业记录</span></p><p><span style="text-decoration:none;">2、匹配要素：</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; A. 时间周期（排班任务开始日期，排班任务结束日期）</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; B. GPS坐标（收运点、中转站、填埋场）</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; C. 车辆（排班任务车辆）</span></p><p><span style="text-decoration:none;">3、匹配步骤</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; P1. 查找车辆前一天的GPS坐标轨迹List&lt;GPS&gt;，如果List&lt;GPS&gt;为空，结束</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; P2. 查找车辆最近一次未作业任务列表List&lt;Task&gt;（时间可能是过去，也可能是将来）</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 作业日期：最近一次作业日期+排班周期</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; P3. 以坐标匹配任务列表Lt1：</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A. 收运任务，清运点匹配数量最多且终点匹配的任务列表</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A1. 遍历车辆实际坐标列表，与收运点、终点匹配</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A2. 第1次匹配到清运点，记为作业开始时间，记录子作业记录</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A3. 匹配到终点时，如果任务收运点都已匹配，记为作业结束时间；如果有任务收运点未匹配，继续匹配</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A4. 如果车辆轨迹已遍历结束，取最后一欠终点匹配为作业结束时间</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 匹配到的点放到已匹配坐标列表</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; B. 转运任务，起点和终点都匹配的任务列表</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; P4. 匹配具体任务T</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A. 如果Lt1只有1个，直接匹配</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; B. 如果Lt2有多个，匹配时间最早的任务</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; P5. 作业定性</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A. 如果任务T的日期早于当前日期，作业为超期作业 </span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; B. 如果任务T的日期等于当前日期，匹配作业时间</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; B1. 如果作业开始时间早于任务开始时间半小时之前，作业为提前作业</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; B2. 如果作业开始时间在任务开始时间半小时前到任务开始时间半小时后，作业为标准作业</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; B3. 如果作业开始时间在任务结果时间</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; </span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u57083" class="ax_default box_1">
+        <div id="u57083_div" class=""></div>
+        <div id="u57083_text" class="text ">
+          <p><span style="font-family:'Arial Normal', 'Arial';text-decoration:none;">1</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">号</span></p><p><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">已做</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u57084" class="ax_default label">
+        <div id="u57084_div" class=""></div>
+        <div id="u57084_text" class="text ">
+          <p><span style="text-decoration:none;">任务列表</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u57085" class="ax_default box_1">
+        <div id="u57085_div" class=""></div>
+        <div id="u57085_text" class="text ">
+          <p><span style="font-family:'Arial Normal', 'Arial';text-decoration:none;">3</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">号 任务1</span></p><p><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">未做</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u57086" class="ax_default box_1">
+        <div id="u57086_div" class=""></div>
+        <div id="u57086_text" class="text ">
+          <p><span style="font-family:'Arial Normal', 'Arial';text-decoration:none;">5</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">号 任务1</span></p><p><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">未做</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u57087" class="ax_default box_1">
+        <div id="u57087_div" class=""></div>
+        <div id="u57087_text" class="text ">
+          <p><span style="font-family:'Arial Normal', 'Arial';text-decoration:none;">3</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">号 任务2</span></p><p><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">未做</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u57088" class="ax_default box_1">
+        <div id="u57088_div" class=""></div>
+        <div id="u57088_text" class="text ">
+          <p><span style="font-family:'Arial Normal', 'Arial';text-decoration:none;">5</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">号 任务2</span></p><p><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">未做</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u57089" class="ax_default label">
+        <div id="u57089_div" class=""></div>
+        <div id="u57089_text" class="text ">
+          <p><span style="text-decoration:none;">作业列表</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u57090" class="ax_default box_1">
+        <div id="u57090_div" class=""></div>
+        <div id="u57090_text" class="text ">
+          <p><span style="font-family:'Arial Normal', 'Arial';text-decoration:none;">3</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">号</span></p><p><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">提前作业</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u57091" class="ax_default box_1">
+        <div id="u57091_div" class=""></div>
+        <div id="u57091_text" class="text ">
+          <p><span style="font-family:'Arial Normal', 'Arial';text-decoration:none;">3</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">号</span></p><p><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">迟到作业</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u57092" class="ax_default box_1">
+        <div id="u57092_div" class=""></div>
+        <div id="u57092_text" class="text ">
+          <p><span style="font-family:'Arial Normal', 'Arial';text-decoration:none;">4</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">号</span></p><p><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">作业</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u57093" class="ax_default box_1">
+        <div id="u57093_div" class=""></div>
+        <div id="u57093_text" class="text ">
+          <p><span style="font-family:'Arial Normal', 'Arial';text-decoration:none;">6</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">号</span></p><p><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">作业</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u57094" class="ax_default box_1">
+        <div id="u57094_div" class=""></div>
+        <div id="u57094_text" class="text ">
+          <p><span style="font-family:'Arial Normal', 'Arial';text-decoration:none;">1</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">号</span></p><p><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">正常作业</span></p>
+        </div>
+      </div>
+    </div>
+    <script src="resources/scripts/axure/ios.js"></script>
+  </body>
+</html>

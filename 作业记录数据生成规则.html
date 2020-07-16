@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>作业记录数据生成规则</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/作业记录数据生成规则/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-3.2.1.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/recording.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="resources/scripts/axure/math.js"></script>
+    <script src="resources/scripts/axure/jquery.nicescroll.min.js"></script>
+    <script src="data/document.js"></script>
+    <script src="files/作业记录数据生成规则/data.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (矩形) -->
+      <div id="u42937" class="ax_default _一级标题">
+        <div id="u42937_div" class=""></div>
+        <div id="u42937_text" class="text ">
+          <p><span style="text-decoration:none;">作业记录数据生成规则</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u42938" class="ax_default box_1">
+        <div id="u42938_div" class=""></div>
+        <div id="u42938_text" class="text ">
+          <p><span style="text-decoration:none;">生成当天任务信息</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u42939" class="ax_default _文本段落">
+        <div id="u42939_div" class=""></div>
+        <div id="u42939_text" class="text ">
+          <p><span style="text-decoration:none;">每天0点0分，根据排班信息生成当天的任务信息</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u42940" class="ax_default box_1">
+        <div id="u42940_div" class=""></div>
+        <div id="u42940_text" class="text ">
+          <p><span style="text-decoration:none;">实时更新作业开始状态</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u42941" class="ax_default _文本段落">
+        <div id="u42941_div" class=""></div>
+        <div id="u42941_text" class="text ">
+          <p><span style="text-decoration:none;">（状态为未开始）</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u42942" class="ax_default _文本段落">
+        <div id="u42942_div" class=""></div>
+        <div id="u42942_text" class="text ">
+          <p><span style="text-decoration:none;">实时识别作业起点信息</span></p><p><span style="text-decoration:none;">按时间更新作业状态：</span></p><p><span style="text-decoration:none;">1、作业开始时间在排班开始时间的[-5,5]分钟范围内，状态为</span><span style="text-decoration:none;color:#FF0000;">“已开始-正常”</span></p><p><span style="text-decoration:none;">2、作业开始时间在排班开始时间的[-30,-5)分钟范围内，状态为</span><span style="text-decoration:none;color:#FF0000;">“已开始-提前”</span></p><p><span style="text-decoration:none;">3、作业开始时间在排班开始时间的(5,30]分钟范围内，状态为</span><span style="text-decoration:none;color:#FF0000;">“已开始-迟到”</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u42943" class="ax_default box_1">
+        <div id="u42943_div" class=""></div>
+        <div id="u42943_text" class="text ">
+          <p><span style="text-decoration:none;">离线更新作业结束状态</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u42944" class="ax_default _文本段落">
+        <div id="u42944_div" class=""></div>
+        <div id="u42944_text" class="text ">
+          <p><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">作业起点识别规则：</span></p><p><span style="font-family:'Arial Normal', 'Arial';text-decoration:none;">1</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">、接收到终端数据时，前后</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;color:#FF0000;">半小时</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">内存在作业排班信息</span></p><p><span style="font-family:'Arial Normal', 'Arial';text-decoration:none;">2</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">、接收到的车辆</span><span style="font-family:'Arial Normal', 'Arial';text-decoration:none;">GPS</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">坐标与作业路线前</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;color:#FF0000;">10%</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">坐标范围内（误差范围</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;color:#FF0000;">100米</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">）</span></p><p><span style="font-family:'Arial Normal', 'Arial';text-decoration:none;"><br></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u42945" class="ax_default _文本段落">
+        <div id="u42945_div" class=""></div>
+        <div id="u42945_text" class="text ">
+          <p><span style="text-decoration:none;">离线识别作业终点信息，计算路线重合率</span></p><p><span style="text-decoration:none;"><br></span></p><p><span style="text-decoration:none;">更新“已开始”的作业状态：</span></p><p><span style="text-decoration:none;">1、路线重合率&lt;10%，更新状态为</span><span style="text-decoration:none;color:#FF0000;">“未作业”</span></p><p><span style="text-decoration:none;">2、路线重合率&gt;=95%，更新状态为</span><span style="text-decoration:none;color:#FF0000;">“已完成”</span></p><p><span style="text-decoration:none;">3、路线重合率在[10%, 95%)区间内，更新状态为</span><span style="text-decoration:none;color:#FF0000;">“未完成”</span></p><p><span style="text-decoration:none;color:#FF0000;"><br></span></p><p><span style="text-decoration:none;">更新“未开始”的作业状态为</span><span style="text-decoration:none;color:#FF0000;">“未作业”</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u42946" class="ax_default _文本段落">
+        <div id="u42946_div" class=""></div>
+        <div id="u42946_text" class="text ">
+          <p><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">作业终点识别规则：</span></p><p><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">1、与排班路线重合的最后一个点（误差范围</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;color:#FF0000;">100米</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">），</span></p><p><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">2、坐标时间在[实际作业开始时间，实际作业开始时间+排班作业时间+</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;color:#FF0000;">半小时</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">]范围内</span></p><p><span style="font-family:'Arial Normal', 'Arial';text-decoration:none;"><br></span></p><p><span style="font-family:'Arial Normal', 'Arial';text-decoration:none;"><br></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (连接符) -->
+      <div id="u42947" class="ax_default _连接线">
+        <img id="u42947_seg0" class="img " src="images/作业记录数据生成规则/u42947_seg0.svg" alt="u42947_seg0"/>
+        <img id="u42947_seg1" class="img " src="images/作业记录数据生成规则/u42947_seg1.svg" alt="u42947_seg1"/>
+        <div id="u42947_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (连接符) -->
+      <div id="u42948" class="ax_default _连接线">
+        <img id="u42948_seg0" class="img " src="images/作业记录数据生成规则/u42948_seg0.svg" alt="u42948_seg0"/>
+        <img id="u42948_seg1" class="img " src="images/作业记录数据生成规则/u42948_seg1.svg" alt="u42948_seg1"/>
+        <div id="u42948_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u42949" class="ax_default box_1">
+        <img id="u42949_img" class="img " src="images/作业记录数据生成规则/u42949.svg"/>
+        <div id="u42949_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <script src="resources/scripts/axure/ios.js"></script>
+  </body>
+</html>
